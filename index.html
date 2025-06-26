@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="title">Potion Timer </h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Sesiones ✨</span>
+                    <span class="stat-value" id="sessions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Nivel 🌟</span>
+                    <span class="stat-value" id="level">1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="timer-container">
+            <div class="potion-bottle">
+                <div class="bottle-neck">
+                    <div class="cork">🌸</div>
+                </div>
+                <div class="bottle-body">
+                    <div class="potion-liquid" id="potionLiquid">
+                        <div class="bubble bubble1">💫</div>
+                        <div class="bubble bubble2">✨</div>
+                        <div class="bubble bubble3">🌟</div>
+                        <div class="heart heart1">💖</div>
+                        <div class="heart heart2">💕</div>
+                    </div>
+                    <div class="bottle-shine"></div>
+                    <div class="bottle-face">
+                        <div class="eyes">
+                            <div class="eye">◕</div>
+                            <div class="eye">◕</div>
+                        </div>
+                        <div class="mouth" id="bottleMouth">ᵕ</div>
+                    </div>
+                </div>
+                <div class="bottle-label">
+                    <div class="time-display" id="timeDisplay">25:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-customizer">
+            <h3 class="customizer-title">⏰ Personalizar Tiempos</h3>
+            <div class="time-inputs">
+                <div class="input-group">
+                    <label>🍅 Trabajo</label>
+                    <div class="input-container">
+                        <input type="range" id="workTime" min="1" max="60" value="25" class="time-slider">
+                        <span class="time-value" id="workValue">25</span>
+                        <span class="time-unit">min</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>☕ Descanso</label>
+                    <div class="input-container">
+                        <input type="range" id="shortBreakTime" min="1" max="30" value="5" class="time-slider">
+                        <span class="time-value" id="shortBreakValue">5</span>
+                        <span class="time-unit">min</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>🛌 Descanso Largo</label>
+                    <div class="input-container">
+                        <input type="range" id="longBreakTime" min="5" max="45" value="15" class="time-slider">
+                        <span class="time-value" id="longBreakValue">15</span>
+                        <span class="time-unit">min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="pomodoro">
+                <span class="btn-icon">🍅</span>
+                <span>TRABAJO</span>
+                <span class="btn-time" id="workModeTime">25m</span>
+            </button>
+            <button class="mode-btn" data-mode="shortBreak">
+                <span class="btn-icon">☕</span>
+                <span>DESCANSO</span>
+                <span class="btn-time" id="shortBreakModeTime">5m</span>
+            </button>
+            <button class="mode-btn" data-mode="longBreak">
+                <span class="btn-icon">🛌</span>
+                <span>DESCANSO LARGO</span>
+                <span class="btn-time" id="longBreakModeTime">15m</span>
+            </button>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn start-btn" id="startBtn">
+                <span class="btn-text">💖 INICIAR</span>
+            </button>
+            <button class="control-btn pause-btn" id="pauseBtn" disabled>
+                <span class="btn-text">⏸️ PAUSAR</span>
+            </button>
+            <button class="control-btn reset-btn" id="resetBtn">
+                <span class="btn-text">🔄 REINICIAR</span>
+            </button>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="progress-text">✨ Progreso de la Sesión ✨</div>
+        </div>
+
+        <div class="footer">
+            <div class="achievement" id="achievement"></div>
+        </div>
+    </div>
+
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
